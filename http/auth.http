@@ -1,0 +1,42 @@
+### new user
+POST localhost:28852/api/auth/user
+Content-Type: application/json
+
+{
+  "name": "hello",
+  "username": "hello3",
+  "password": "12341234"
+}
+
+### new user with invalid
+POST localhost:28852/api/auth/user
+Content-Type: application/json
+
+{
+  "name": "hello",
+  "password": "12341234"
+}
+
+### user list
+GET localhost:28852/api/auth/list
+Authorization: Basic hello3 12341234
+
+### update access
+PUT localhost:28852/api/auth/access
+Content-Type: application/json
+Authorization: Basic hello3 12341234
+
+{
+  "username": "hello4",
+  "operation": "UNLOCK"
+}
+
+### change role
+PUT localhost:28852/api/auth/role
+Content-Type: application/json
+Authorization: Basic hello11 12341234
+
+{
+  "username": "hello1"
+}
+

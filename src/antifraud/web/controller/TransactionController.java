@@ -1,4 +1,4 @@
-package antifraud.web;
+package antifraud.web.controller;
 
 import antifraud.service.TransactionService;
 import antifraud.web.dto.TransactionDto;
