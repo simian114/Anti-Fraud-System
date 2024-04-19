@@ -1,0 +1,57 @@
+### new transaction
+POST localhost:28852/api/antifraud/transaction
+Content-Type: application/json
+
+{
+  "amount": 0
+}
+
+### new transaction
+POST localhost:28852/api/antifraud/transaction
+Content-Type: application/json
+
+{
+  "amount": 200
+}
+
+### manual
+POST localhost:28852/api/antifraud/transaction
+Content-Type: application/json
+
+{
+  "amount": 201
+}
+
+### manual
+POST localhost:28852/api/antifraud/transaction
+Content-Type: application/json
+
+{
+  "amount": 1500
+}
+
+### prohibited
+POST localhost:28852/api/antifraud/transaction
+Content-Type: application/json
+
+{
+  "amount": 1501
+}
+
+
+
+### invalid
+POST localhost:28852/api/antifraud/transaction
+Content-Type: application/json
+
+{
+  "amount": -1
+}
+
+### manual
+POST localhost:28852/api/antifraud/transaction
+Content-Type: application/json
+
+{
+  "amount": -1
+}
