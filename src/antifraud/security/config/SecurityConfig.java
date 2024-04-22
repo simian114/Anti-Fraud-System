@@ -56,6 +56,11 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/auth/user/**").permitAll()
                         // support & admin
                         .requestMatchers(HttpMethod.GET, "/api/auth/list/**").hasAnyRole(RoleCodeEnum.ADMINISTRATOR.name(), RoleCodeEnum.SUPPORT.name())
+                        // support
+                        .requestMatchers("/api/antifraud/suspicious-ip/**").hasRole(RoleCodeEnum.SUPPORT.name())
+                        .requestMatchers("/api/antifraud/stolencard/**").hasRole(RoleCodeEnum.SUPPORT.name())
+                        .requestMatchers(HttpMethod.GET, "/api/antifraud/history/**").hasRole(RoleCodeEnum.SUPPORT.name())
+                        .requestMatchers(HttpMethod.PUT, "/api/antifraud/transaction/**").hasRole(RoleCodeEnum.SUPPORT.name())
                         // merchant
                         .requestMatchers(HttpMethod.POST, "/api/antifraud/transaction/**").hasRole(RoleCodeEnum.MERCHANT.name())
                         // admin

@@ -1,57 +1,52 @@
 ### new transaction
 POST localhost:28852/api/antifraud/transaction
+Authorization: Basic hello1111 12341234
 Content-Type: application/json
 
 {
-  "amount": 0
+  "amount": 11,
+  "number": "4000008449433403",
+  "ip": "192.168.1.1",
+  "region": "EAP",
+  "date": "2022-01-22T17:04:00"
+}
+
+### should ip-correlation
+POST localhost:28852/api/antifraud/transaction
+Content-Type: application/json
+Authorization: Basic hello1111 12341234
+
+{
+  "amount": 11,
+  "number": "4000008449433403",
+  "ip": "192.168.1.3",
+  "region": "EAP",
+  "date": "2022-01-22T17:05:00"
 }
 
 ### new transaction
 POST localhost:28852/api/antifraud/transaction
 Content-Type: application/json
+Authorization: Basic hello1111 12341234
 
 {
-  "amount": 200
+  "amount": 11,
+  "number": "1234123412341235",
+  "ip": "192.168.1.1",
+  "region": "EAP",
+  "date": "2022-01-22T16:04:00"
 }
 
-### manual
+### should region-correlation
 POST localhost:28852/api/antifraud/transaction
 Content-Type: application/json
+Authorization: Basic hello1111 12341234
 
 {
-  "amount": 201
+  "amount": 11,
+  "number": "1234123412341235",
+  "ip": "192.168.1.1",
+  "region": "ECA",
+  "date": "2022-01-22T16:04:00"
 }
 
-### manual
-POST localhost:28852/api/antifraud/transaction
-Content-Type: application/json
-
-{
-  "amount": 1500
-}
-
-### prohibited
-POST localhost:28852/api/antifraud/transaction
-Content-Type: application/json
-
-{
-  "amount": 1501
-}
-
-
-
-### invalid
-POST localhost:28852/api/antifraud/transaction
-Content-Type: application/json
-
-{
-  "amount": -1
-}
-
-### manual
-POST localhost:28852/api/antifraud/transaction
-Content-Type: application/json
-
-{
-  "amount": -1
-}

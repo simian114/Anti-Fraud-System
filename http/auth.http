@@ -4,8 +4,8 @@ Content-Type: application/json
 
 {
   "name": "hello",
-  "username": "hello3",
-  "password": "12341234"
+  "username": "hello1111",
+  "password": ""
 }
 
 ### new user with invalid
@@ -24,10 +24,10 @@ Authorization: Basic hello3 12341234
 ### update access
 PUT localhost:28852/api/auth/access
 Content-Type: application/json
-Authorization: Basic hello3 12341234
+Authorization: Basic hello11 12341234
 
 {
-  "username": "hello4",
+  "username": "hello1111",
   "operation": "UNLOCK"
 }
 
@@ -37,6 +37,25 @@ Content-Type: application/json
 Authorization: Basic hello11 12341234
 
 {
-  "username": "hello1"
+  "username": "hello1111",
+  "role": "MERCHANT"
 }
+
+### suspi
+DELETE localhost:28852/api/antifraud/suspicious-ip/192.168.1.
+Authorization: Basic hello1111 12341234
+
+### suspi
+DELETE localhost:28852/api/antifraud/suspicious-ip/192.168.1.66
+Authorization: Basic hello1111 12341234
+
+### card add
+POST http://127.0.0.1:28852/api/antifraud/stolencard
+Content-Type: application/json
+Authorization: Basic hello1111 12341234
+
+{
+  "number": "4000003305061034"
+}
+
 

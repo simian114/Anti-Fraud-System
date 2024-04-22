@@ -2,7 +2,7 @@ package antifraud.web.controller;
 
 import antifraud.constants.UpdateUserAccessOperationEnum;
 import antifraud.service.UserService;
-import antifraud.web.dto.StatusWithUsername;
+import antifraud.web.dto.response.StatusWithUsernameResponse;
 import antifraud.web.dto.UpdateUserAccessDto;
 import antifraud.web.dto.UpdateUserRoleDto;
 import antifraud.web.dto.UserDto;
@@ -36,7 +36,7 @@ public class UserController {
     public ResponseEntity<?> deleteUser(@PathVariable String username) {
         this.userService.deleteUser(username);
         return ResponseEntity
-                .ok(new StatusWithUsername("Deleted successfully!", username));
+                .ok(new StatusWithUsernameResponse("Deleted successfully!", username));
     }
 
     @PutMapping("/api/auth/access")

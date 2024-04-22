@@ -1,0 +1,3 @@
+- spring security
+  - user authentication & role based authorization
+- custom enum bean validation
